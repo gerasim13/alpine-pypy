@@ -34,8 +34,10 @@ RUN ldd /usr/lib/pypy/bin/pypy
 RUN cd /tmp/ && \
     pypy3 get-pip.py && \
     pypy3 -m pip install git+https://bitbucket.org/pypy/numpy.git && \
-    ln -s /usr/bin/pip /usr/local/bin/pip3 && \
     rm get-pip.py
+
+RUN ln -s /usr/bin/pip /usr/local/bin/pip3
+RUN pip3 install --upgrade pip
 
 RUN apk del build-base gfortran && \
     rm -rf /var/cache/apk/*
