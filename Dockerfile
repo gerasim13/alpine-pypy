@@ -37,7 +37,7 @@ RUN cd /tmp/ && \
     rm get-pip.py
 
 RUN ln -s /usr/lib/pypy/bin/pip /usr/local/bin/pip && \
-    ln -s /usr/lib/pypy/bin/pip /usr/local/bin/pip3 && \
+    ln -s /usr/lib/pypy/bin/pip /usr/local/bin/pip3
 
 RUN apk del build-base gfortran && \
     rm -rf /var/cache/apk/*
