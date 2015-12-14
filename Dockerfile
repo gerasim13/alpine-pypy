@@ -36,7 +36,7 @@ RUN ln -s -f /usr/lib/libncurses.so.5.9 /usr/lib/libtinfo.so.5 && \
 RUN ldd /usr/lib/pypy/bin/pypy
 RUN cd /tmp/ && \
     pypy3 get-pip.py && \
-    pypy3 -m pip install git+https://bitbucket.org/pypy/numpy.git && \
+    # pypy3 -m pip install git+https://bitbucket.org/pypy/numpy.git && \
     rm get-pip.py
 
 RUN ln -s /usr/lib/pypy/bin/pip /usr/local/bin/pip && \
