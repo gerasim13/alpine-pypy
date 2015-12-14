@@ -1,7 +1,9 @@
 FROM gliderlabs/alpine
 MAINTAINER Pavel Litvinenko <gerasim13@gmail.com>
 
-RUN apk add --update musl git curl perl libgcc libbz2 libffi libgcrypt ncurses-libs openblas openblas-dev build-base python-dev gfortran
+RUN apk add --update musl git curl perl libgcc libbz2 libffi libgcrypt ncurses-libs build-base python-dev gfortran
+RUN apk add openblas openblas-dev --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted
+
 ENV PYPY pypy3-2.4-linux_x86_64-portable
 ENV GLIBC_VER 2.21-r2
 ADD https://bitbucket.org/squeaky/portable-pypy/downloads/${PYPY}.tar.bz2 /tmp/${PYPY}.tar.bz2
